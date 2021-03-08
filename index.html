@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Presentación en 6° año - IMA</title>
+</head>
+<body>
+    <h1>¡Bienvenidos a 6° año!</h1>
+    <p>Vamos a presentarnos, uno por uno. Estas son las reglas:</p>
+    <ul>
+        <li>Si salió tu nombre sorteado, entonces tenés que contar algo sobre vos, lo que tu compañera/o te haya pedido.</li>
+        <li>Tenés 1 minuto como máximo.</li>
+        <li>Cuando termines, apretá el botón de acá abajo y pasale la pelota virtual a tu compañera/o.</li>
+    </ul>
+    <input type="button" onclick="nuevo()" value="Tirá la pelota">
+    <p>Quién sigue: <div id="alumno"></div></p>
+    <p>Y pedile que cuente sobre: <div id="tema"></div></p>
+</body>
+<script>
+var temas = [
+    'Algo sobre tu familia',
+    'Con quiénes haces mejor equipo en el aula',
+    'Cuál es la materia qué más te gusta',
+    'Algo del colegio que no te guste',
+    'Lo que más te gusta del colegio',
+    'Algo del colegio que no te guste',
+    'Lo que más te gusta del colegio',
+    'Qué esperás hacer este año'
+]
+var alumnos = [
+'Thiago Brusco', 
+'Francisco Daneluz', 
+'Nicolás Fernández Blanco', 
+'Francisco Giraldes', 
+'Julián Gómez', 
+'Santiago Hekimoglu', 
+'Juan Mateo Irazoqui', 
+'Nicolás Pulvirenti', 
+'Manuel Puyó', 
+'Laureano Rojas', 
+'Martín Rossato', 
+'Tobías Souto', 
+'Agustina Alegre', 
+'Abril Alvarez Galeano', 
+'Magalí Anfuso', 
+'Victoria Brites', 
+'Canela Calle', 
+'Camilla Ceolini', 
+'Valentina Cerrone', 
+'Martina Colmegna', 
+'Rocío Coto', 
+'María Celeste Cupeta Eusebi', 
+'Lourdes Dagna', 
+'Valentina Diano', 
+'Araceli Figueira Campos', 
+'Candela Fourcade', 
+'Sofía Garcete', 
+'Abril Guzmán', 
+'Camila Lozano', 
+'Josefina Mallo', 
+'Martina Mazaira', 
+'Martina Pescia', 
+'Bianca Regazzoni', 
+'Julieta Varela', 
+'Cecilia Vilardi', 
+'Camila Ybarra Scialabba'
+];
+function random_tema(){
+  return temas[Math.floor(Math.random()*temas.length)];   
+}
+function random_alumno(){
+  return alumnos[Math.floor(Math.random()*alumnos.length)];   
+}
+function nuevo(){
+    document.getElementById("alumno").innerHTML = random_alumno();
+    document.getElementById("tema").innerHTML = random_tema();
+    document.body.style.backgroundColor = '#'+(Math.floor(Math.random()*16777215)+5000000).toString(16);
+}
+</script>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    div {
+        font-weight: bold;
+    }
+</style>
+</html>
